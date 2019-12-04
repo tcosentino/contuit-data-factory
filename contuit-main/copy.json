@@ -1,0 +1,40 @@
+{
+   "activities": [{
+      "name": "Copy data1",
+      "type": "Copy",
+      "dependsOn": [],
+      "policy": {
+          "timeout": "7.00:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+      },
+      "userProperties": [],
+      "typeProperties": {
+          "source": {
+              "type": "MongoDbV2Source",
+              "batchSize": 100
+          },
+          "sink": {
+              "type": "CosmosDbMongoDbApiSink",
+              "writeBatchTimeout": "00:30:00",
+              "writeBatchSize": 100,
+              "writeBehavior": "insert"
+          },
+          "enableStaging": false
+      },
+      "inputs": [
+          {
+              "referenceName": "MongoDbV2Collection2",
+              "type": "DatasetReference"
+          }
+      ],
+      "outputs": [
+          {
+              "referenceName": "CosmosDbMongoDbApiCollection1",
+              "type": "DatasetReference"
+          }
+      ]
+  }]
+}
