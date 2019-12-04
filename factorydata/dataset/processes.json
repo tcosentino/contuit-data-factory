@@ -1,0 +1,15 @@
+{
+  "name": "processes",
+  "properties": {
+    "linkedServiceName": {
+      "referenceName": "Production_mongo",
+      "type": "LinkedServiceReference"
+    },
+    "annotations": [],
+    "type": "MongoDbV2Collection",
+    "schema": [],
+    "typeProperties": {
+      "collection": "processes"
+    }
+  }
+}
