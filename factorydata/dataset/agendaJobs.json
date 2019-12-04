@@ -1,5 +1,5 @@
 {
-	"name": "Production_Mongo",
+	"name": "agendaJobs",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Production_mongo",
