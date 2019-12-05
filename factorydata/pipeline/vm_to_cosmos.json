@@ -252,8 +252,8 @@
 					},
 					"sink": {
 						"type": "CosmosDbMongoDbApiSink",
-						"writeBatchTimeout": "00:1:00",
-						"writeBatchSize": 50,
+						"writeBatchTimeout": "00:30:00",
+						"writeBatchSize": 500,
 						"writeBehavior": "insert"
 					},
 					"enableStaging": false,
