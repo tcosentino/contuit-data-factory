@@ -17,7 +17,8 @@
 				"typeProperties": {
 					"source": {
 						"type": "MongoDbV2Source",
-						"batchSize": 100
+						"batchSize": 100,
+						"filter": ""
 					},
 					"sink": {
 						"type": "CosmosDbMongoDbApiSink",
@@ -25,7 +26,14 @@
 						"writeBatchSize": 10,
 						"writeBehavior": "insert"
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
 				},
 				"inputs": [
 					{
