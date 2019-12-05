@@ -32,7 +32,8 @@
 						"linkedServiceName": {
 							"referenceName": "migrate storage",
 							"type": "LinkedServiceReference"
-						}
+						},
+						"path": "main"
 					}
 				},
 				"inputs": [
