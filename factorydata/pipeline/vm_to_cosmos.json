@@ -3,7 +3,237 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Do the copy",
+				"name": "Copy agendaJobs",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "agendaJobs",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_agendaJobs",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy blockwaitings",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "blockwaitings",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_blockwaitings",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy codes",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "codes",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_codes",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy contuitclients",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "contuitclients",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_contuitclients",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy enabledintegrations",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "enabledintegrations",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_enabledintegrations",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy executions",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -44,6 +274,328 @@
 				"outputs": [
 					{
 						"referenceName": "cosmos_executions",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy passwordcodes",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "passwordcodes",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_passwordcodes",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy processes",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "processes",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_processes",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy registeredcallbacks",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "registeredcallbacks",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_registeredcallbacks",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy roles",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "roles",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_roles",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy solutiongroups",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "solutiongroups",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_solutiongroups",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy users",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "users",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_users",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy vaultdatas",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "MongoDbV2Source",
+						"batchSize": 100,
+						"filter": ""
+					},
+					"sink": {
+						"type": "CosmosDbMongoDbApiSink",
+						"writeBatchTimeout": "00:1:00",
+						"writeBatchSize": 50,
+						"writeBehavior": "insert"
+					},
+					"enableStaging": false,
+					"enableSkipIncompatibleRow": true,
+					"redirectIncompatibleRowSettings": {
+						"linkedServiceName": {
+							"referenceName": "migrate storage",
+							"type": "LinkedServiceReference"
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "vaultdatas",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "cosmos_vaultdatas",
 						"type": "DatasetReference"
 					}
 				]
