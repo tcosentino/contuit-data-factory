@@ -1,15 +1,18 @@
 {
-  "name": "contuitclients",
-  "properties": {
-    "linkedServiceName": {
-      "referenceName": "Production_mongo",
-      "type": "LinkedServiceReference"
-    },
-    "annotations": [],
-    "type": "MongoDbV2Collection",
-    "schema": [],
-    "typeProperties": {
-      "collection": "contuitclients"
-    }
-  }
+	"name": "contuitclients",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Production_mongo",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "vm mongo"
+		},
+		"annotations": [],
+		"type": "MongoDbV2Collection",
+		"schema": [],
+		"typeProperties": {
+			"collection": "contuitclients"
+		}
+	}
 }

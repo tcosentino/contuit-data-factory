@@ -5,6 +5,9 @@
 			"referenceName": "Production_mongo",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "vm mongo"
+		},
 		"annotations": [],
 		"type": "MongoDbV2Collection",
 		"schema": [],
