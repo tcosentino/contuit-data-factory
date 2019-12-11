@@ -1,0 +1,15 @@
+{
+	"name": "final_cosmos",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "New Cosmos",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "CosmosDbMongoDbApiCollection",
+		"schema": [],
+		"typeProperties": {
+			"collection": "executions"
+		}
+	}
+}
