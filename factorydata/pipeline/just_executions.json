@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "CosmosDbMongoDbApiSource",
+						"type": "MongoDbV2Source",
 						"batchSize": 100
 					},
 					"sink": {
@@ -37,13 +37,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "cosmos_executions",
+						"referenceName": "contuitclients",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "final_cosmos",
+						"referenceName": "cosmos_contuitclients",
 						"type": "DatasetReference"
 					}
 				]

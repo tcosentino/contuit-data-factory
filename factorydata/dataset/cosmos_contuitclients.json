@@ -1,18 +1,18 @@
 {
-  "name": "cosmos_contuitclients",
-  "properties": {
-    "linkedServiceName": {
-      "referenceName": "Cosmos DB",
-      "type": "LinkedServiceReference"
-    },
-    "folder": {
-      "name": "cosmos"
-    },
-    "annotations": [],
-    "type": "CosmosDbMongoDbApiCollection",
-    "schema": [],
-    "typeProperties": {
-      "collection": "contuitclients"
-    }
-  }
+	"name": "cosmos_contuitclients",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Cosmos DB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "cosmos"
+		},
+		"annotations": [],
+		"type": "CosmosDbMongoDbApiCollection",
+		"schema": [],
+		"typeProperties": {
+			"collection": "contuitclients"
+		}
+	}
 }
